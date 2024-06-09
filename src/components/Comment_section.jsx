@@ -13,13 +13,22 @@ const CommentSection  = () => {
   //  const [localComments, setLocalComments] = useState([]);
 
    // State to hold comments from data.json
-  //  const [dataComments, setDataComments] = useState(data.comments);
+   
 
-   const [comments, setComments] = useState(JSON.parse(localStorage.getItem('comments')) || []);
-
-   useEffect(() => {
-    localStorage.setItem('comments', JSON.stringify(comments));
-  }, [comments]);
+   
+    const initialComments = data.comments;
+    const [comments, setComments] = useState(initialComments);
+  
+    useEffect(() => {
+      console.log('Initial comments from localStorage or data.json:', initialComments);
+      localStorage.setItem('comments', JSON.stringify(comments));
+    }, []);
+  
+    useEffect(() => {
+      console.log('Comments state updated:', comments);
+      localStorage.setItem('comments', JSON.stringify(comments));
+    }, [comments]);
+  
  
    const handleCommentSubmit = (newComment, parentId) => {
      // Update local state with the new comment or reply
