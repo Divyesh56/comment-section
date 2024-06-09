@@ -1,0 +1,313 @@
+.container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: auto 2fr auto;
+    grid-auto-rows: minmax(20px, auto); /* Set a minimum row height */
+
+    border: 5px ; /* You can adjust the width and color as needed */
+    padding: 15px 10px ; /* Optional: Add padding to the content inside the div */
+    padding-bottom: 20px;
+    
+    border-radius: 8px;
+    margin: 20px;
+    background-color: white;
+     
+}
+
+
+.vote-buttons {
+  background-color:  hsl(228, 33%, 97%);
+    display: flex;
+    flex-direction: column;
+    grid-row: 1 ;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 15px; */
+    margin: 5px;
+    max-height: 85px;
+    border-radius: 6px;
+    max-width: 70px;
+}
+
+
+
+.vote-buttons button{
+    margin-top: 5px;
+    margin: 5px;
+    background-color:  hsl(228, 33%, 97%);
+    border: none;
+    color: hsl(239, 57%, 85%);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.vote-buttons button:hover {
+  color: hsl(238, 40%, 52%);
+}
+
+.vote-buttons span{
+  color:  hsl(211, 10%, 45%);
+}
+
+
+
+.comment-header{
+    grid-row: 1;
+   grid-column: 2/ span 2;
+    margin-bottom: 0px;
+     
+}
+
+.user-info {
+    display: inline-flex;
+    /* align-items: center; */
+    gap: 10px;
+ 
+  
+}
+
+.user-info p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 15px;
+     font-weight: 300;
+}
+
+.user-info .user-name {
+  
+  color: hsl(212, 24%, 26%);
+  font-weight: 700;
+}
+
+
+.user-info .owner {
+  background-color: hsl(238, 40%, 52%) ;
+  border-radius: 5px;
+  padding: 0px 9px 0px 8px;
+  color: white;
+  text-align: center;
+  align-content: center;
+  height: 20px;
+  font-size: 15px;
+}
+
+
+
+.replay {
+   
+    grid-column: 3; /* Set the replay button to the third grid column */
+    grid-row: 1; /* Make the replay button occupy the first row */
+    display: inline-flex;
+    justify-content: flex-end; /* Align the replay button to the right */
+    align-items: first baseline;
+    
+}
+ 
+
+.replay button{
+    border: none;
+    background-color: white;
+}
+
+
+.replay .delete-button{
+   color: red;
+   cursor: pointer;
+}
+
+.replay .delete-button:hover{
+  filter: hue-rotate(1deg) saturate(1.425) brightness(1.635);
+}
+ 
+
+
+ 
+ 
+
+.comment-content {
+   margin-top: 5px;
+   margin-bottom: 0px;
+   font-weight: 300 ;
+}
+
+
+.comment .replies {
+    margin-left: 40px; /* Adjust the indentation as needed */
+    border-left: 2px solid #ccc; /* Add left border to replies */
+    padding-left: 15px; /* Adjust the padding as needed */
+  }
+  .responsive-textarea {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    resize: vertical; /* Enable vertical resizing */
+    min-height: 97px;
+    cursor: pointer;
+    border: 1px solid hsl(239, 57%, 85%);
+    border-bottom: 1px solid hsl(238, 40%, 52%);
+  }
+
+  
+
+ 
+  
+
+
+  .responsive-textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+
+  /* Add these styles to ensure the overlay covers the whole page */
+.dark-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  .confirmation-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Higher than the overlay */
+  }
+  
+  .confirmation-dialog-content {
+    background: white;
+    padding: 20px;
+    max-width: 270px;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001; /* Higher than the dialog */
+  }
+  
+  .confirmation-dialog-content p {
+    margin-bottom: 20px;
+  }
+  
+  .confirmation-dialog-content h2 {
+    margin: 0;
+  }
+  .confirmation-dialog-content .cancel-button,
+  .confirmation-dialog-content .confirm-button {
+    display: inline-block;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 6px;
+    align-items: flex-start;
+  }
+  
+  .confirmation-dialog-content .cancel-button {
+    background: hsl(211, 10%, 45%);
+    margin-right: 5px;
+  
+  }
+  
+  .confirmation-dialog-content .confirm-button {
+    background: #d9534f;
+    margin-left: 10px;
+  }
+
+  .edit-button, .reply-button {
+    color:  hsl(238, 40%, 52%) ;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .reply-button:hover, .edit-button:hover {
+   /* color: hsl(239, 57%, 85%); */
+    
+   filter: hue-rotate(1deg) saturate(1.425) brightness(1.635);
+  }
+
+ 
+    
+   
+   
+ 
+
+  .update-bt, .cancel-bt {
+       width: max-content;
+      display: inline;
+      margin-top: 5px;
+      cursor: pointer;
+      z-index: 9999;
+      background-color:  hsl(238, 40%, 52%);
+      color: white;
+      border-radius: 3px;
+      border: none;
+      padding: 5px 10px;
+
+  }
+
+  .update-bt:hover, .cancel-bt:hover {
+    background-color: hsl(239, 57%, 85%);
+
+}
+
+  .update-bt{
+   margin-right: 10px;
+    
+}
+
+ 
+
+.two-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+ 
+  
+
+  
+
+   
+ 
+
+/* Media query for mobile devices */
+@media (max-width: 431px) {
+    .vote-buttons {
+    grid-column: 2;
+    flex-direction: row;
+    grid-row: 2;
+    margin-bottom: 0px;
+    justify-content: flex-start;
+    }
+
+    
+    .replay {
+        grid-row: 2;
+        align-items: center;
+       
+    }
+
+    .comment .replies {
+        margin-left: 0px; /* Adjust the indentation as needed */
+        border-left: 0px ; /* Add left border to replies */
+        padding-left: 0px; /* Adjust the padding as needed */
+      }
+     
+    
+    
+}
+

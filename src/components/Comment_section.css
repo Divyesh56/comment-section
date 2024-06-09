@@ -1,0 +1,18 @@
+.app {
+    max-width: 600px;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.omment-box {
+  margin-bottom: 50px;
+}
+/* 
+ 
+.rubik {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+} */
